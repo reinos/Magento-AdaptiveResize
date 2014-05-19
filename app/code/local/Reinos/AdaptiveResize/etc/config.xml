@@ -1,0 +1,23 @@
+<config>
+    <global>
+        <modules>
+            <Farm_AdaptiveResize>
+                <version>1.0.0</version>
+            </Farm_AdaptiveResize>
+        </modules>
+        <helpers>
+            <catalog>
+                <rewrite>
+                    <image>Reinos_AdaptiveResize_Helper_Image</image>
+                </rewrite>
+            </catalog>
+        </helpers>
+        <models>
+            <catalog>
+                <rewrite>
+                    <product_image>Reinos_AdaptiveResize_Model_Product_Image</product_image>
+                </rewrite>
+            </catalog>
+        </models>
+    </global>
+</config>
