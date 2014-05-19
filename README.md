@@ -10,7 +10,7 @@ Implements an adaptive resize function just like the phpthumbs library implement
 How To Use
 ----------
 
-- Simply download the source code here: [magento-adaptive-resize.zip](https://github.com/wearefarm/magento-adaptive-resize/zipball/master) and extract into your Magento install directory.
+- Simply download the source code and extract into your Magento install directory.
 - Flush the Magento cache
 
 Now where ever you can call the normal `resize()` method on an image you can call `adaptiveResize()` instead!
