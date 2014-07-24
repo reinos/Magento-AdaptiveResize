@@ -25,13 +25,13 @@ Example:
 
 	/*
 	 * You can pass width and height and much more, see helper for details.
-	 * echo $this->helper('adaptiveresize')->init($_category->getImageUrl())->resize(null, 120)
-	 * echo $this->helper('adaptiveresize')->init($_category->getImageUrl())->resize(120, null)
-	 * echo $this->helper('adaptiveresize')->init($_category->getImageUrl())->resize(120, 120)
+	 * echo $this->helper('adaptiveResize')->init($_category->getImageUrl())->resize(null, 120)
+	 * echo $this->helper('adaptiveResize')->init($_category->getImageUrl())->resize(120, null)
+	 * echo $this->helper('adaptiveResize')->init($_category->getImageUrl())->resize(120, 120)
 	 */
 	<div class="product-image">
 		<a href="<?php echo $_category->getURL() ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>">
-			<img src="<?php echo $this->helper('adaptiveresize')->init($_category->getImageUrl())->resize(null, 120) ?>" alt="<?php echo $this->htmlEscape($_category->getName()) ?>"/>
+			<img src="<?php echo $this->helper('adaptiveResize')->init($_category->getImageUrl())->resize(null, 120) ?>" alt="<?php echo $this->htmlEscape($_category->getName()) ?>"/>
 		</a>
 	</div>
 	
@@ -40,7 +40,7 @@ You can init image helper with path to image, then  you must pass width and heig
 
 ```PHP
 <img src="<?php 
-	echo $this->helper('adaptiveresize')
+	echo $this->helper('adaptiveResize')
 			  ->init($_category->getImageUrl())
 			  ->setWidth(230)
 			  ->setHeight(200)
