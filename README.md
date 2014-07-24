@@ -7,7 +7,7 @@ Implements an adaptive resize function
 > This is called adaptive resizing.
 > [phpThumb](http://trac.gxdlabs.com/projects/phpthumb/wiki/Docs/BasicUsage#AdaptiveResizing)
 
-How To Use 
+How To Use for the products
 ----------
 
 - Simply download the source code and extract into your Magento install directory.
