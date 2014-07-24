@@ -35,7 +35,7 @@ Example:
 		</a>
 	</div>
 	
-# How to crop image?
+# How to crop image for categories?
 You can init image helper with path to image, then  you must pass width and height to crop image. After image is cropped its saved and ready to be resized using cropped image as source image to be resized. See example code below.
 
 ```PHP
