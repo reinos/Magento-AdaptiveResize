@@ -1,10 +1,28 @@
 <config>
+    <modules>
+        <Reinos_AdaptiveResize>
+            <version>1.0.0</version>
+        </Reinos_AdaptiveResize>
+    </modules>
+    <frontend>
+        <routers>
+            <adaptiveresize>
+                <use>standard</use>
+                <args>
+                    <module>Reinos_Adaptiveresize</module>
+                    <frontName>adaptiveresize</frontName>
+                </args>
+            </adaptiveresize>
+        </routers>
+        <layout>
+            <updates>
+                <adaptiveresize>
+                    <file>adaptiveresize.xml</file>
+                </adaptiveresize>
+            </updates>
+        </layout>
+    </frontend>
     <global>
-        <modules>
-            <Farm_AdaptiveResize>
-                <version>1.0.0</version>
-            </Farm_AdaptiveResize>
-        </modules>
         <helpers>
             <catalog>
                 <rewrite>
@@ -19,5 +37,42 @@
                 </rewrite>
             </catalog>
         </models>
+
+        <cache>
+            <types>
+                <adaptiveresize translate="label,description" module="reinos_adaptiveresize">
+                    <label>Category Reinos Cache</label>
+                    <description>Deletes all cached images created by Reinos extension.</description>
+                    <tags>ADAPTIVERESIZE</tags>
+                </adaptiveresize>
+            </types>
+        </cache>
+        <models>
+            <adaptiveresize>
+                <class>Reinos_Adaptiveresize_Model</class>
+            </adaptiveresize>
+        </models>
+        <helpers>
+            <adaptiveresize>
+                <class>Reinos_Adaptiveresize_Helper</class>
+            </adaptiveresize>
+        </helpers>
+        <blocks>
+            <adaptiveresize>
+                <class>Reinos_Adaptiveresize_Block</class>
+            </adaptiveresize>
+        </blocks>
     </global>
+    <adminhtml>
+        <events>
+            <adminhtml_cache_refresh_type>
+                <observers>
+                    <adaptiveresize_clean_cache>
+                        <class>adaptiveresize/observer</class>
+                        <method>cleanCache</method>
+                    </adaptiveresize_clean_cache>
+                </observers>
+            </adminhtml_cache_refresh_type>
+        </events>
+    </adminhtml>
 </config>

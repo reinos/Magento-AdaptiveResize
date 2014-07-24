@@ -7,7 +7,7 @@ Implements an adaptive resize function
 > This is called adaptive resizing.
 > [phpThumb](http://trac.gxdlabs.com/projects/phpthumb/wiki/Docs/BasicUsage#AdaptiveResizing)
 
-How To Use
+How To Use 
 ----------
 
 - Simply download the source code and extract into your Magento install directory.
@@ -19,4 +19,32 @@ Example:
 
 ``` php
 <img src="<?php echo $this->helper('catalog/image')->init($_product, 'thumbnail')->adaptiveResize(160, 213) ?>" width="160" height="213" alt="<?php echo $this->htmlEscape($_product->getName()); ?>" />
+```
+
+## How to use this with Categories?
+
+	/*
+	 * You can pass width and height and much more, see helper for details.
+	 * echo $this->helper('adaptiveresize')->init($_category->getImageUrl())->resize(null, 120)
+	 * echo $this->helper('adaptiveresize')->init($_category->getImageUrl())->resize(120, null)
+	 * echo $this->helper('adaptiveresize')->init($_category->getImageUrl())->resize(120, 120)
+	 */
+	<div class="product-image">
+		<a href="<?php echo $_category->getURL() ?>" title="<?php echo $this->htmlEscape($_category->getName()) ?>">
+			<img src="<?php echo $this->helper('adaptiveresize')->init($_category->getImageUrl())->resize(null, 120) ?>" alt="<?php echo $this->htmlEscape($_category->getName()) ?>"/>
+		</a>
+	</div>
+	
+# How to crop image?
+You can init image helper with path to image, then  you must pass width and height to crop image. After image is cropped its saved and ready to be resized using cropped image as source image to be resized. See example code below.
+
+```PHP
+<img src="<?php 
+	echo $this->helper('adaptiveresize')
+			  ->init($_category->getImageUrl())
+			  ->setWidth(230)
+			  ->setHeight(200)
+			  ->crop()
+			  ->resize() 
+	?>" alt="alt text"/>
 ```
